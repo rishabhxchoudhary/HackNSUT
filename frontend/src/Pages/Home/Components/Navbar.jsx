@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-import {Navigate, useNavigate} from 'react-router-dom';
 
 function Navbar() {
   const [account,setAccount] = useState(null);
@@ -12,9 +11,24 @@ function Navbar() {
   const handleClick = () =>{
     window.ethereum
     .request({ method: "eth_requestAccounts" })
-    .then((result) => {
+    .then(async (result) => {
       setAccount(result[0]);
-      Navigate('/dashboard/admin');
+      // var abi = keys[0];
+      // var address = keys[1];
+      // const { ethereum } = window;
+      // const provider = new ethers.providers.Web3Provider(ethereum);
+      // const signer = await provider.getSigner();
+      // const contract = await new ethers.Contract(address, abi, signer);
+      // await contract.isRegisteredUser().call().then(function (data){
+      //   console.log(data);
+      //   if (data[0]==='n'){
+      //     alert("Make an account.");
+      //   }
+      //   else{
+      //     Navigate('/dashboard/admin');
+      //   }
+      // })
+      
       
       console.log(Login);
       console.log("Wallet Connected");
@@ -44,8 +58,8 @@ function Navbar() {
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <a class="mr-5 hover:text-gray-900 cursor-pointer" href='/'>Home</a>
       <a class="mr-5 hover:text-gray-900 cursor-pointer" href="/about" >About us</a>
-      <a class="mr-5 hover:text-gray-900 cursor-pointer">Third Link</a>
-      <a class="mr-5 hover:text-gray-900 cursor-pointer">Experiences</a>
+      {/* <a class="mr-5 hover:text-gray-900 cursor-pointer">Third Link</a> */}
+      <a class="mr-5 hover:text-gray-900 cursor-pointer" href="/experiences">Experiences</a>
     </nav>
 
     <button onClick={handleClick} class=" text-gray-700 inline-flex items-center bg-green-400 border-0 py-1 px-3 focus:outline-none hover:bg-green-200 rounded text-base mt-4 md:mt-0">

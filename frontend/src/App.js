@@ -11,6 +11,9 @@ import ViewEntry from './Pages/Dashboard/Admin/ViewEntry';
 import SearchEntry from './Pages/Dashboard/Admin/SearchEntry';
 import RequestAccess from './Pages/Dashboard/Admin/RequestAccess';
 import UserLogs from './Pages/Dashboard/user/UserLogs';
+import Experiences from './Pages/Experiences/Experiences';
+import AuthorisedRequests from './Pages/Dashboard/user/AuthorisedRequests';
+import PendingRequests from './Pages/Dashboard/user/PendingRequests';
 
 
 
@@ -28,8 +31,8 @@ function App() {
             <Route path="/dashboard/admin/requestaccess" element={<RequestAccess></RequestAccess>}></Route>
             <Route path="/dashboard/user" element={<User></User>}></Route>
             <Route path="/dashboard/user/logs" element={<UserLogs></UserLogs>}></Route>
-            <Route path="/dashboard/user/pending" element={<User></User>}></Route>
-            <Route path="/dashboard/user/authorised" element={<User></User>}></Route>
+            <Route path="/dashboard/user/pending" element={<AuthorisedRequests></AuthorisedRequests>}></Route>
+            <Route path="/dashboard/user/authorised" element={<PendingRequests></PendingRequests>}></Route>
             {/* <Route path="/dashboard/user" element={<User></User>}></Route> */}
           </Routes>
 
@@ -40,7 +43,7 @@ function App() {
           {/* <Route path="/events" element={<Events></Events>}></Route>
           <Route path="/gallery" element={<Gallery></Gallery>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route> */}
-          {/* <Route path="/dash" element={<Dash></Dash>}></Route> */}
+          <Route path="/Experiences" element={<Experiences></Experiences>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
